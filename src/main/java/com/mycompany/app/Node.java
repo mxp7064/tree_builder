@@ -78,7 +78,9 @@ public class Node {
      * @param childNode child node to be added
      */
     public void addChildNode(Node childNode){
-        if(!this.childNodes.contains(childNode))
+        if(!this.childNodes.contains(childNode)){
             this.childNodes.add(childNode);
+            childNode.setParentNode(this);
+        }
     }
 }

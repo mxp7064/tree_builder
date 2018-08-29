@@ -33,17 +33,18 @@ public class TreeUtils {
      *
      * @param node node from which to start traversing the tree downwards
      * @param indentationLevel indentation level
+     * @param stringBuilder string builder which will be appended in each recursive call to build the final ouput String
      */
-    public static void printTree (Node node, int indentationLevel) {
-        StringBuilder sb = new StringBuilder();
+    public static void printTree (Node node, int indentationLevel, StringBuilder stringBuilder) {
         for (int i = 0; i < indentationLevel; i++) {
-            sb.append(INDENT_STRING);
+            stringBuilder.append(INDENT_STRING);
         }
 
-        System.out.println(sb + node.getName());
+        stringBuilder.append(node.getName());
+        stringBuilder.append(System.lineSeparator());
 
         for (Node n : node.getChildNodes()) {
-            printTree(n, indentationLevel + 1);
+            printTree(n, indentationLevel + 1, stringBuilder);
         }
     }
 
@@ -86,9 +87,6 @@ public class TreeUtils {
                 childNode = new Node(pair.getChildName());
                 nodeHashMap.put(pair.getChildName(), childNode);
             }
-
-            // set the parent of the child node
-            childNode.setParentNode(parentNode);
 
             // Check if there is a cyclic relationship before adding a child node to a parent
             // If it is, an exception will be raised
