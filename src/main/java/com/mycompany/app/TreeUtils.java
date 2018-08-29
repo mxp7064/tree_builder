@@ -20,10 +20,10 @@ public class TreeUtils {
      * @throws Exception if traversing finds a cyclic relationship
      */
     public static boolean checkCyclicRelationship (Node node, String nodeName) throws Exception {
-        if(node.getParentNode() == null)
-            return false;
         if(node.getName().equals(nodeName))
             throw new Exception("Cyclic relationship not allowed!");
+        if(node.getParentNode() == null)
+            return false;
         else
             return checkCyclicRelationship(node.getParentNode(), nodeName);
     }

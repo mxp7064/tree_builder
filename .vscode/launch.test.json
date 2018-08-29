@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "my-app",
+                "projectName": "my-app",
+                "workingDirectory": "c:\\Users\\Panca\\Desktop\\tree_builder",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "my-app",
+                "projectName": "my-app",
+                "workingDirectory": "c:\\Users\\Panca\\Desktop\\tree_builder",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
