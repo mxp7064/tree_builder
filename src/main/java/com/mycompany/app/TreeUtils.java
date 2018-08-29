@@ -3,6 +3,7 @@ package com.mycompany.app;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * Tree Utils is a class providing utility methods for working with trees
  */
@@ -29,13 +30,13 @@ public class TreeUtils {
     }
 
     /**
-     * Prints recursively the tree structure from the given node downwards with indentation
+     * Recursively generates the tree structure from the given node downwards with indentation and line separators
      *
      * @param node node from which to start traversing the tree downwards
      * @param indentationLevel indentation level
      * @param stringBuilder string builder which will be appended in each recursive call to build the final ouput String
      */
-    public static void printTree (Node node, int indentationLevel, StringBuilder stringBuilder) {
+    public static void generateTreeStructureString (Node node, int indentationLevel, StringBuilder stringBuilder) {
         for (int i = 0; i < indentationLevel; i++) {
             stringBuilder.append(INDENT_STRING);
         }
@@ -44,7 +45,7 @@ public class TreeUtils {
         stringBuilder.append(System.lineSeparator());
 
         for (Node n : node.getChildNodes()) {
-            printTree(n, indentationLevel + 1, stringBuilder);
+            generateTreeStructureString(n, indentationLevel + 1, stringBuilder);
         }
     }
 

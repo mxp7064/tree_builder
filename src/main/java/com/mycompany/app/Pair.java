@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Pair is a class representing a pair of child and parent name
+ * Pair is a class representing a pair of child and parent names
  */
 public class Pair {
 
@@ -62,7 +62,6 @@ public class Pair {
         try {
             ClassLoader classLoader = App.class.getClassLoader();
             File file = new File(classLoader.getResource(fileName).getFile());
-        
             fileReader = new FileReader(file);
         } 
         catch (NullPointerException e) {

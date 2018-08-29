@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Tree Builder App
  *
- * This program creates and prints a tree structure from a list of child-parent pairs specified in src/main/resources/input.txt file
+ * This program creates and prints a tree structure from a list of child-parent pairs specified in a text file
  *
  * App is a class containing the main method of the program
  *
@@ -53,7 +53,7 @@ public class App {
      * tree structure.
      * 
      * @param inputFileName input file name
-     * @return output string representing the tree structure extracted from the input file
+     * @return String representing the tree structure extracted from the input file
      */
     public static String mainProgramMethod(String inputFileName) throws Exception{
 
@@ -74,10 +74,10 @@ public class App {
         }
 
         // Generate output String using StringBuilder
-        // Output string builder is appended recursively - in the end it will contain properly formatted output
+        // Output string builder is appended recursively and it contains formatted output
         StringBuilder outputStringBuilder = new StringBuilder();
         for (Node node : firstLevelNodes) {
-            TreeUtils.printTree(node, 0, outputStringBuilder);
+            TreeUtils.generateTreeStructureString(node, 0, outputStringBuilder);
         }
 
         // Return output string
