@@ -28,7 +28,15 @@ public class App {
             String inputFileName = args[0];
 
             // Run main program method
-            String output = mainProgramMethod(inputFileName);
+            String output = "";
+            try {
+                output = mainProgramMethod(inputFileName);
+            } catch (Exception e) {
+                // If an exception is thrown then display a message to the user explaining what the problem was and exit the program
+                System.out.println(e.getMessage());
+                System.out.println("Program terminated");
+                System.exit(1);
+            }
 
             // Print the output
             System.out.println(output);
@@ -47,23 +55,16 @@ public class App {
      * @param inputFileName input file name
      * @return output string representing the tree structure extracted from the input file
      */
-    public static String mainProgramMethod(String inputFileName){
-        ArrayList<Pair> pairs = null;
-        Map<String, Node> nodeHashMap = null;
-        try {
+    public static String mainProgramMethod(String inputFileName) throws Exception{
 
-            // Get pairs from input file
-            pairs = Pair.getPairsFromInput(inputFileName);
+        ArrayList<Pair> pairs = null;// ArrayList of Pairs representing child-parent pairs
+        Map<String, Node> nodeHashMap = null;// Map which is used to map Node names to Nodes
 
-            // Process pairs
-            nodeHashMap = TreeUtils.processPairs(pairs);
+        // Get child-parent pairs from the input file
+        pairs = Pair.getPairsFromInput(inputFileName);
 
-        } catch (Exception e) {
-            // If an exception is thrown then display a message to the user explaining what the problem was and exit the program
-            System.out.println(e.getMessage());
-            System.out.println("Program terminated");
-            System.exit(1);
-        }
+        // Process pairs - generate Node Map with relationships set between the Nodes
+        nodeHashMap = TreeUtils.processPairs(pairs);
 
         // Get first level nodes
         List<Node> firstLevelNodes = new ArrayList<Node>();
@@ -72,6 +73,7 @@ public class App {
                 firstLevelNodes.add(node);
         }
 
+        // Generate output String using StringBuilder
         // Output string builder is appended recursively - in the end it will contain properly formatted output
         StringBuilder outputStringBuilder = new StringBuilder();
         for (Node node : firstLevelNodes) {

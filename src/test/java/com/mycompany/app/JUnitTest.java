@@ -27,8 +27,15 @@ class JUnit5Tests {
     }
 
     @Test
-    void testMainProgramMethod(){
-        String output = App.mainProgramMethod("input.txt");
+    void testMainProgramMethodWithValidInput() {
+        String output = "";
+        try{
+            output = App.mainProgramMethod("input.txt");
+        }
+        catch(Exception e){
+            fail("Should not have thrown any exception");
+        }
+        
         assertEquals(output, 
         "Ivan" + System.lineSeparator() 
         + TreeUtils.INDENT_STRING + "Adam" + System.lineSeparator() 
@@ -38,5 +45,13 @@ class JUnit5Tests {
         + TreeUtils.INDENT_STRING + "Fran" + System.lineSeparator() 
         + "Luka" + System.lineSeparator() 
         + TreeUtils.INDENT_STRING + "Leopold" + System.lineSeparator());   
+    }
+
+    @Test
+    void testMainProgramMethodWithCyclicInvalidInput(){
+        Throwable exception = assertThrows(Exception.class, () -> {
+            App.mainProgramMethod("cyclicInput.txt");
+        });
+        assertEquals(exception.getMessage(), "Cyclic relationship not allowed!");
     }
 }

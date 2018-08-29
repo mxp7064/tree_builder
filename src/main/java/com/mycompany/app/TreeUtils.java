@@ -49,7 +49,8 @@ public class TreeUtils {
     }
 
     /**
-     * Generate a Map from a list of pairs with keys being node names (effectively ids) and values being the actual Nodes
+     * Generate a Map from a list of child-parent pairs with Map keys being Node names (effectively ids) and values being the actual Nodes
+     * Create relationships between child and parent Nodes
      * 
      * @param pairs ArrayList of Pair objects representing child-parent pairs
      * @return Map of (node name, Node) pairs
