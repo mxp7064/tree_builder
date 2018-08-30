@@ -15,19 +15,19 @@ How to run:
     Expected output: <br />
     Ivan <br />
     &nbsp;&nbsp;&nbsp;&nbsp;Adam <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stjepan <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marko <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robert <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;Fran <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Stjepan <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Marko <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Robert <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;  Fran <br />
     Luka <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;Leopold <br /> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;  Leopold <br /> <br />
 
     b) mvn exec:java -Dexec.args="childHasMoreThanOneParent.txt" <br />
     Expected output: <br />
     Pero <br /> 
-    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br /> 
+    &nbsp;&nbsp;&nbsp;&nbsp;  Ivan <br /> 
     Luka <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br /> <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;  Ivan <br /> <br />
 
     c) mvn exec:java -Dexec.args="cyclicInput.txt" <br />
     Expected output: <br />
