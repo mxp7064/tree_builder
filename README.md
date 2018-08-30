@@ -13,26 +13,26 @@ How to run:
 4) Run the program: <br />
     a) mvn exec:java -Dexec.args="input.txt" <br />
     Expected output: <br />
-    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br />
-            Adam <br />
-                Stjepan <br />
-                    Marko <br />
-                    Robert <br />
-            Fran <br />
-        Luka <br />
-            Leopold <br /> <br />
+    Ivan <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Adam <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stjepan <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marko <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robert <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Fran <br />
+    Luka <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Leopold <br /> <br />
 
     b) mvn exec:java -Dexec.args="childHasMoreThanOneParent.txt" <br />
     Expected output: <br />
-        Pero <br /> 
-            Ivan <br /> 
-        Luka <br />
-            Ivan <br /> <br />
+    Pero <br /> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br /> 
+    Luka <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br /> <br />
 
     c) mvn exec:java -Dexec.args="cyclicInput.txt" <br />
     Expected output: <br />
-        Cyclic relationship not allowed! <br />
-        Program terminated <br /> <br />
+    Cyclic relationship not allowed! <br />
+    Program terminated <br /> <br />
 
 
 Note: Run JUnit tests with: mvn clean test 
