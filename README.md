@@ -13,7 +13,7 @@ How to run:
 4) Run the program: <br />
     a) mvn exec:java -Dexec.args="input.txt" <br />
     Expected output: <br />
-        Ivan <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;Ivan <br />
             Adam <br />
                 Stjepan <br />
                     Marko <br />
